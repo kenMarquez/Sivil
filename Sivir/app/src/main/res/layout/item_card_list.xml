@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_bottom_relative_card"
+    android:layout_marginLeft="@dimen/margin_card_relative"
+    android:layout_marginRight="@dimen/margin_card_relative"
+    android:background="@color/white">
+
+    <!--275,310-->
+    <ImageView
+        android:id="@+id/image_main_card"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+
+        android:scaleType="centerCrop"
+        android:src="@drawable/elecciones_congreso" />
+
+    <TextView
+        android:id="@+id/tv_title_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/image_main_card"
+        android:text="Title"
+        android:textColor="@color/primaryColor"
+        android:textSize="21sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_description_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_title_card"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/image_main_card"
+        android:maxLines="2"
+        android:text="Description"
+        android:textSize="16sp" />
+    <!--78,65-->
+    <LinearLayout
+        android:id="@+id/linear_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_description_card"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_toRightOf="@+id/image_main_card"
+        android:orientation="horizontal"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:id="@+id/tv_fecha_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="07/03/2015" />
+
+        <ImageView
+
+            android:layout_width="26dp"
+            android:layout_height="21dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/comentarios" />
+
+        <TextView
+            android:id="@+id/tv_no_comments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="1dp"
+            android:text="16" />
+
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="21dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="18dp"
+            android:src="@drawable/match" />
+
+        <TextView
+            android:id="@+id/tv_no_matches"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="3dp"
+            android:text="23" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_below="@+id/linear_card"
+        android:background="@color/background_material_light"
+        android:paddingTop="6dp" />
+
+
+</RelativeLayout>

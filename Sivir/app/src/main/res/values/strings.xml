@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Sívil</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_sub">SubActivity</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_description">Topic</string>
+    <string name="key_title_post">title_post</string>
+    <string name="key_content_post">content_post</string>
+    <string name="object_post_id">Post</string>
+    <string name="title_activity_dispatch">Inicio</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="privacity_terms">terminos de privacidad</string>
+    <string name="login">REGISTRARSE</string>
+    <string name="singup">Iniciar Secion</string>
+    <string name="title_activity_singup">SingupActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="restore_password">Restaurar contraseña</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="progress_login">Iniciando Seción....</string>
+    <string name="progress_signup">Espere un momento</string>
+    <string name="key_pass">password</string>
+    <string name="key_first_name">first_name</string>
+    <string name="key_last_name">last_name</string>
+    <string name="title_activity_sign_up_activity2">SignUpActivity2</string>
+    <string name="error_title">Titulo no valido</string>
+    <string name="key_category">categoria</string>
+    <string name="key_latlon">latlon</string>
+    <string name="key_descripcion">descripcion</string>
+    <string name="key_title">title</string>
+    <string name="key_parent">parent</string>
+    <string name="valid_post">Tú publicación ha sido creada!!</string>
+    <string name="invalid_post">Hubó un error crear el post!!</string>
+    <string name="key_no_comments">no_comments</string>
+    <string name="key_no_matches">no_matches</string>
+    <string name="title_activity_noticia">NoticiaActivity</string>
+    <string name="object_user_id">user_id</string>
+    <string name="key_object_id">object_id</string>
+    <string name="object_comment_id">Coment</string>
+    <string name="key_user_id">user_id</string>
+    <string name="likes">key_likes</string>
+    <string name="disLikes">key_dislikes</string>
+    <string name="key_user_comment">user</string>
+    <string name="key_post_comment">post_parent</string>
+
+</resources>
