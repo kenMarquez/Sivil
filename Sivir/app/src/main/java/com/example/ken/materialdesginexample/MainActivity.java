@@ -196,7 +196,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
                             String name = user.getString(getString(R.string.key_first_name));
                             Number val = user.getNumber("validation");
 
-                            Log.i("myLog", "user : " + (name) + " val: " + val.intValue());
+                            Log.i("myLog", "user : " + (name) + " val: " + val);
                             if (isMessage) {
                                 NotificationManager mNotificationManager = (NotificationManager)
                                         getSystemService(Context.NOTIFICATION_SERVICE);
