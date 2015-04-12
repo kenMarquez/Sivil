@@ -32,7 +32,7 @@
     <string name="key_category">categoria</string>
     <string name="key_latlon">latlon</string>
     <string name="key_descripcion">descripcion</string>
-    <string name="key_title">title</string>
+    <string name="key_title">monto</string>
     <string name="key_parent">parent</string>
     <string name="valid_post">Tú publicación ha sido creada!!</string>
     <string name="invalid_post">Hubó un error crear el post!!</string>
@@ -47,5 +47,29 @@
     <string name="disLikes">key_dislikes</string>
     <string name="key_user_comment">user</string>
     <string name="key_post_comment">post_parent</string>
+    <string name="title_activity_payment">PaymentActivity</string>
+    <string name="hint_tarjeta">Número de tarjeta</string>
+    <string name="hint_mm">mm</string>
+    <string name="hint_aa">aa</string>
+    <string name="hint_cvv">cvv</string>
+    <string name="hint_codigo_postal">cp</string>
+    <string name="registrarse_button">Registrar</string>
+    <string name="terminos_payment">Terminos y Condiciones</string>
+    <string name="key_credit_card_object">CreditCard</string>
+    <string name="key_no_tarjeta">noTarjeta</string>
+    <string name="key_aa">aa</string>
+    <string name="key_mm">mm</string>
+    <string name="key_country">country</string>
+    <string name="countrt">country</string>
+    <string name="key_cvv">country</string>
+    <string name="key_cp">cp</string>
+    <string name="relation_card_user">user</string>
+    <string name="key_credit_default">credit_card</string>
+    <string name="error_sing_up">Error al iniciar secion</string>
+    <string name="key_mail">mail</string>
+    <string name="key_tel">tel</string>
+    <string name="title_activity_prestamo">PrestamoActivity</string>
+    <string name="key_image">image</string>
+    <string name="key_monto">monto</string>
 
 </resources>

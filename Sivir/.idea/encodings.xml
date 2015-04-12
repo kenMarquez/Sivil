@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$USER_HOME$/AndroidStudioProjects/MxBusinessHack/.gitignore" charset="UTF-8" />
+    <file url="file://$USER_HOME$/AndroidStudioProjects/MxBusinessHack/app/.gitignore" charset="UTF-8" />
+    <file url="file://$USER_HOME$/AndroidStudioProjects/MxBusinessHack/app/build.gradle" charset="UTF-8" />
+    <file url="file://$USER_HOME$/AndroidStudioProjects/MxBusinessHack/app/proguard-rules.pro" charset="UTF-8" />
+    <file url="file://$USER_HOME$/AndroidStudioProjects/MxBusinessHack/app/src/androidTest/java/mx/mobile/bambu/mxbusinesshack/ApplicationTest.java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/AndroidStudioProjects/MxBusinessHack/app/src/main/java/mx/mobile/bambu/mxbusinesshack/MainActivity.java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/AndroidStudioProjects/MxBusinessHack/build.gradle" charset="UTF-8" />
+    <file url="file://$USER_HOME$/AndroidStudioProjects/MxBusinessHack/gradle.properties" charset="UTF-8" />
+    <file url="file://$USER_HOME$/AndroidStudioProjects/MxBusinessHack/local.properties" charset="UTF-8" />
+    <file url="file://$USER_HOME$/AndroidStudioProjects/MxBusinessHack/settings.gradle" charset="UTF-8" />
+  </component>
 </project>
-

@@ -117,7 +117,6 @@ public class NoticiaActivity extends ActionBarActivity implements AdapterView.On
                         arrayComments.add(comment);
                     }
                     adapter.notifyDataSetChanged();
-
                 } else {
                     Toast.makeText(getApplicationContext(), "Error al abrir Comentario", Toast.LENGTH_SHORT).show();
 

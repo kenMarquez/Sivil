@@ -90,6 +90,9 @@ public class DescriptionActivity extends ActionBarActivity implements View.OnCli
             post.put(getString(R.string.key_parent), ParseUser.getCurrentUser());
             post.put(getString(R.string.key_no_comments), 0);
             post.put(getString(R.string.key_no_matches), 0);
+            ParseUser user = ParseUser.getCurrentUser();
+            user.put(getString(R.string.key_monto), title);
+            user.saveInBackground();
 
             post.saveInBackground(new SaveCallback() {
                 @Override

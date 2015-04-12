@@ -10,6 +10,11 @@ import android.widget.TextView;
 
 import com.example.ken.materialdesginexample.Class.Post;
 import com.example.ken.materialdesginexample.R;
+import com.example.ken.materialdesginexample.Util.CirclePicture;
+import com.parse.GetCallback;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -18,7 +23,8 @@ import java.util.ArrayList;
  */
 public class CardsAdapter extends BaseAdapter {
 
-    private final int[] ICONS = {R.drawable.baches, R.drawable.vialidad, R.drawable.accidente};
+    private final int[] ICONS = {R.drawable.profile1, R.drawable.profile2, R.drawable.profile3, R.drawable.profile4};
+    //    private final int[] ICONS = {R.drawable.baches, R.drawable.vialidad, R.drawable.accidente};
     private final Activity actividad;
     private final ArrayList<Post> lista;
 
@@ -42,19 +48,54 @@ public class CardsAdapter extends BaseAdapter {
             viewHolder.textFecha = (TextView) view.findViewById(R.id.tv_fecha_card);
             viewHolder.textNoComments = (TextView) view.findViewById(R.id.tv_no_comments);
             viewHolder.textNoMatches = (TextView) view.findViewById(R.id.tv_no_matches);
+            viewHolder.textMonto = (TextView) view.findViewById(R.id.monto);
             view.setTag(viewHolder);
         }
-        ViewHolder holder = (ViewHolder) view.getTag();
         Post post = lista.get(position);
-        holder.textTitle.setText(post.getTitle());
-        holder.textDescription.setText(post.getDescription());
-        holder.textNoComments.setText(post.getNoComments() + "");
-        holder.textNoMatches.setText(post.getNoMatches() + "");
+        final ViewHolder holder = (ViewHolder) view.getTag();
 
-        int y = position % 3;
+        ParseQuery<ParseUser> query = ParseUser.getQuery();
+        query.getInBackground(post.getIdUser(), new GetCallback<ParseUser>() {
+
+            @Override
+            public void done(ParseUser user, com.parse.ParseException e) {
+                if (e == null) {
+                    // The query was successful.
+                    holder.textTitle.setText(user.getString(actividad.getString(R.string.key_first_name)));
+
+                    String monto = user.getString(actividad.getString(R.string.key_monto));
+                    holder.textMonto.setText("Monto: $" + monto);
+                    Picasso.with(actividad.getApplicationContext()).load(user.getInt(actividad.getString(R.string.key_image))).resize(60, 60).transform(new CirclePicture()).into(holder.imageTitle);
+                    if (user == null) {
+                        // no matching user!
+                    }
+                } else {
+                    holder.textTitle.setText("Juan");
+                }
+            }
+        });
+
+
+//        query.getInBackground(post.getIdUser(),new GetCallback<ParseUser>() {
+//
+//            @Override
+//            public void done(ParseUser parseUser, ParseException e) {
+//
+//            }
+
+//        });
+
+
+        holder.textDescription.setText(post.getDescription());
+//        holder.textNoComments.setText(post.getNoComments() + "");
+//        holder.textNoMatches.setText(post.getNoMatches() + "");
+
+        int y = position % 4;
 //        switch (y) {
 //            case 0:
-        holder.imageTitle.setImageResource(ICONS[y]);
+        //Picasso.with(actividad.getApplicationContext()).load(ICONS[y]).into(holder.imageTitle);
+
+        //holder.imageTitle.setImageResource(ICONS[y]);
 //                break;
 //            case 1:
 //                holder.imageTitle.setImageResource(ICONS[1]);
@@ -63,8 +104,6 @@ public class CardsAdapter extends BaseAdapter {
 //                holder.imageTitle.setImageResource(ICONS[2]);
 //                break;
 //        }
-
-
         return view;
     }
 
@@ -87,6 +126,7 @@ public class CardsAdapter extends BaseAdapter {
         public TextView textFecha;
         public TextView textNoMatches;
         public TextView textNoComments;
+        public TextView textMonto;
 
     }
 

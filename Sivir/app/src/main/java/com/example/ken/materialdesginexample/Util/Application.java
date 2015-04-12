@@ -11,7 +11,7 @@ public class Application extends android.app.Application {
     public static final boolean APPDEBUG = false;
 
     // Debugging tag for the application
-    public static final String APPTAG = "UPER";
+    public static final String APPTAG = "MXHACK";
 
     // Used to pass location from MainActivity to PostActivity
     public static final String INTENT_EXTRA_LOCATION = "location";
@@ -35,10 +35,10 @@ public class Application extends android.app.Application {
         //ParseObject.registerSubclass(AnywallPost.class);
 //    Parse.initialize(this, "YOUR_PARSE_APPLICATION_ID",
 //        "YOUR_PARSE_CLIENT_KEY");
-        Parse.initialize(this, "RbumBXP6nbspZ3GT5OgxyWeapqA6AlN5TnBNjL2F",
-                "uQxQRzJOp08LuFyHGAweNPURkzSrkkbJ0WfZKE8E");
+        Parse.initialize(this, "HOSbo7SnGohYmujHXl50KSo2l7sDEC9skkgGoo5p",
+                "nGIBnhGxJzc6Rrf2YDNlX2argoj9DjeO4pfes9Cy");
 
-        preferences = getSharedPreferences("com.parse.uper", Context.MODE_PRIVATE);
+        preferences = getSharedPreferences("com.parse.mxhack", Context.MODE_PRIVATE);
         configHelper = new ConfigHelper();
         configHelper.fetchConfigIfNeeded();
     }

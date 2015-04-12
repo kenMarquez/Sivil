@@ -1,0 +1,123 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ken.materialdesginexample.PrestamoActivity">
+
+    <include
+        android:id="@+id/app_bar2"
+        layout="@layout/app_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+
+        android:layout_below="@+id/app_bar2"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/app_bar2"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="15dp"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/primaryColorDark"
+                android:padding="5dp"
+                android:id="@+id/linear">
+
+
+                <TextView
+                    android:id="@+id/monto_tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_margin="15dp"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:src="@drawable/user62"
+                android:id="@+id/imageView3"
+                android:layout_below="@+id/linear" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre Usuario"
+                android:id="@+id/name"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:layout_alignTop="@+id/imageView3"
+                android:layout_toRightOf="@+id/imageView3"
+                android:layout_toEndOf="@+id/imageView3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nivel de confianza : Buena"
+                android:id="@+id/reputation_tv"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/name"
+                android:textSize="16sp"
+                android:layout_alignLeft="@+id/name" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dirección : Col. del valle , no. 153 , calle Sinaloa "
+                android:id="@+id/address_tv"
+                android:layout_below="@+id/imageView3"
+                android:layout_alignLeft="@+id/imageView3"
+                android:layout_marginLeft="10dp"
+                android:textSize="16sp"
+                android:layout_alignStart="@+id/imageView3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Estadísticas"
+                android:id="@+id/monto_tv"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/address_tv"
+                android:textColor="@color/primaryColorDark"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/monto_tv"
+                android:scaleType="centerCrop"
+                android:id="@+id/graphic_image"
+                android:src="@drawable/grafica" />
+
+
+            <Button
+                android:id="@+id/aceptar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/graphic_image"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:text="confiar" />
+        </RelativeLayout>
+
+    </ScrollView>
+</RelativeLayout>

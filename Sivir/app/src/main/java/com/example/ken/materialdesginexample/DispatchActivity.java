@@ -4,10 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.parse.ParseException;
+import com.parse.ParsePush;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 
 public class DispatchActivity extends ActionBarActivity {
@@ -35,8 +39,21 @@ public class DispatchActivity extends ActionBarActivity {
             public void onFinish() {
                 ParseUser user = ParseUser.getCurrentUser();
                 if (user != null) {
-                    startActivity(new Intent(DispatchActivity.this, MainActivity.class));
-                    finish();
+                    ParsePush.subscribeInBackground("", new SaveCallback() {
+
+                        @Override
+                        public void done(ParseException e) {
+                            if (e == null) {
+                                Log.d("com.parse.push", "successfully subscribed to the broadcast channel.");
+                                startActivity(new Intent(DispatchActivity.this, MainActivity.class));
+                                finish();
+                            } else {
+                                Log.e("com.parse.push", "failed to subscribe for push", e);
+                            }
+                        }
+                    });
+//                    startActivity(new Intent(DispatchActivity.this, MainActivity.class));
+//                    finish();
                 } else {
                     startActivity(new Intent(DispatchActivity.this, WelcomeActivity.class));
                     finish();

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,7 +13,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.parse.ParseException;
+import com.parse.ParsePush;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 import com.parse.SignUpCallback;
 
 
@@ -105,8 +108,26 @@ public class SignUpActivity2 extends ActionBarActivity {
             user.setUsername(mail);
             user.setPassword(password);
             user.setEmail(mail);
+
             user.put(getString(R.string.key_first_name), name);
-            //user.put(getString(R.string.key_last_name), lastName);
+            switch (name.toLowerCase()) {
+                case "alonso":
+                    user.put(getString(R.string.key_image), R.drawable.profile1);
+                    break;
+                case "guillermo":
+                    user.put(getString(R.string.key_image), R.drawable.profile2);
+                    break;
+                case "omar":
+                    user.put(getString(R.string.key_image), R.drawable.profile3);
+                    break;
+                case "ken":
+                    user.put(getString(R.string.key_image), R.drawable.profile4);
+                    break;
+                default:
+                    user.put(getString(R.string.key_image), R.drawable.user62);
+            }
+            user.put("notification", false);
+
             user.signUpInBackground(new SignUpCallback() {
                 @Override
                 public void done(ParseException e) {
@@ -119,8 +140,20 @@ public class SignUpActivity2 extends ActionBarActivity {
                             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     } else {
-                        startActivity(new Intent(SignUpActivity2.this, MainActivity.class));
-                        finish();
+                        ParsePush.subscribeInBackground("", new SaveCallback() {
+                            @Override
+                            public void done(ParseException e) {
+                                if (e == null) {
+                                    Log.d("com.parse.push", "successfully subscribed to the broadcast channel.");
+                                    startActivity(new Intent(SignUpActivity2.this, PaymentActivity.class));
+                                } else {
+                                    Log.e("com.parse.push", "failed to subscribe for push", e);
+                                    startActivity(new Intent(SignUpActivity2.this, PaymentActivity.class));
+                                }
+                            }
+                        });
+
+                        //finish();
                     }
                 }
             });

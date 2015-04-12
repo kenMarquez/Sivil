@@ -13,16 +13,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.ken.materialdesginexample.R;
+import com.example.ken.materialdesginexample.Util.CirclePicture;
+import com.parse.ParseUser;
+import com.squareup.picasso.Picasso;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class DrawerFragment extends Fragment implements AdapterView.OnItemClickListener {
 
-    public static final String[] MENU = {"Categorias", "Mapa", "Busqueda"};
+    public static final String[] MENU = {"Tarjetas de credito", "Grupos", "Busqueda"};
 
     public static final String PREF_NAME_FILE = "myPreferences";
     public static final String KEY_USER_LEARNED_DRAWER = "user_learned_drawer";
@@ -54,6 +59,14 @@ public class DrawerFragment extends Fragment implements AdapterView.OnItemClickL
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.drawer_fragment, container, false);
         mOptionsList = (ListView) view.findViewById(R.id.listview_navigation_top);
+        ImageView ivUser = (ImageView) view.findViewById(R.id.imageView);
+        ParseUser parseUser = ParseUser.getCurrentUser();
+        //ivUser.setImageResource(parseUser.getInt(getString(R.string.key_image)));
+        Picasso.with(getActivity()).load(parseUser.getInt(getString(R.string.key_image))).resize(64, 64).transform(new CirclePicture()).into(ivUser);
+        TextView tvName = (TextView) view.findViewById(R.id.tv_name);
+        TextView tvMail = (TextView) view.findViewById(R.id.tv_mail);
+        tvName.setText(parseUser.getString(getString(R.string.key_first_name)));
+        tvMail.setText(parseUser.getEmail());
         ArrayAdapter adapter = new ArrayAdapter<String>(getActivity(), R.layout.item_drawer_list, R.id.item_title, MENU);
         mOptionsList.setAdapter(adapter);
 

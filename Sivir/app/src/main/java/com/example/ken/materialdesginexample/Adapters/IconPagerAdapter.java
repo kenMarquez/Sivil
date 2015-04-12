@@ -8,13 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.astuetz.PagerSlidingTabStrip;
 import com.example.ken.materialdesginexample.R;
 
 /**
  * Created by Ken on 08/03/2015.
  */
-public class IconPagerAdapter extends PagerAdapter implements PagerSlidingTabStrip.IconTabProvider {
+public class IconPagerAdapter extends PagerAdapter {
 
     private final int[] ICONS = {R.drawable.noticiason, R.drawable.mapaon, R.drawable.categoriason};
     private Activity activity;
@@ -23,10 +22,10 @@ public class IconPagerAdapter extends PagerAdapter implements PagerSlidingTabStr
         this.activity = activity;
     }
 
-    @Override
-    public int getPageIconResId(int i) {
-        return ICONS[i];
-    }
+//    @Override
+//    public int getPageIconResId(int i) {
+//        return ICONS[i];
+//    }
 
     @Override
     public int getCount() {

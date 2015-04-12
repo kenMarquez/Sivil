@@ -10,7 +10,7 @@
         android:id="@+id/relative_layout"
         android:layout_width="match_parent"
         android:layout_height="220dp"
-        android:background="@drawable/background2">
+        android:background="@drawable/background">
 
 
         <ImageView
@@ -38,6 +38,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:text="Jonathan Lee"
+                android:id="@+id/tv_name"
                 android:textColor="#fff"
                 android:textSize="14sp" />
 
@@ -45,6 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
+                android:id="@+id/tv_mail"
                 android:text="heyFromJonathanMail@gmail.com"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp" />
